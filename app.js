@@ -16,7 +16,7 @@ app.set('mysql', mysql);
 app.get('/', function(req, res, next)  {
    res.status(200);
    // res.render('helloWorld.handlebars');
-   
+
 // get username
    var userName = 'Stan';
    // get name of webpage
@@ -52,5 +52,3 @@ app.use(function(err, req, res, next){
 //setting the port to the env variable or 3000 as default
 var port = process.env.PORT || 3000;
 app.listen(port);
-
-   
