@@ -15,7 +15,27 @@ app.set('mysql', mysql);
 //serving the main page
 app.get('/', function(req, res, next)  {
    res.status(200);
-   res.render('helloWorld.handlebars');
+   // res.render('helloWorld.handlebars');
+   
+// get username
+   var userName = 'Stan';
+   // get name of webpage
+   var pageName = 'My Complete Healthcare';
+   // get today's date
+   var dd = new Date();
+   var year = dd.getFullYear();
+   var month = dd.getMonth() + 1;
+   var day = dd.getDate();
+   var curDate = year + '/' + month + '/' + day;
+   // fill in template and render
+   function fillHomePage(){
+       var homeVar ={};
+       homeVar.userName = userName;
+       homeVar.pageName = pageName;
+       homeVar.date = curDate;
+       return homeVar;
+   }
+   res.render('homePage', fillHomePage()); 
 });
 
 app.use(function(req,res){
@@ -32,3 +52,5 @@ app.use(function(err, req, res, next){
 //setting the port to the env variable or 3000 as default
 var port = process.env.PORT || 3000;
 app.listen(port);
+
+   
