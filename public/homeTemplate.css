@@ -1,0 +1,74 @@
+#mainDiv {
+    padding-left: 3%;
+}
+
+header {
+    background-color: #17415f;
+    color: #fff; 
+}
+
+header a {
+    color: #fff;
+}
+
+footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #17415f;
+   
+}
+
+footer a {
+    color: #fff;
+}
+
+nav li {
+    display: inline;
+    margin-right: 25px;
+    font-family: "verdana", sans-serif;
+    font-size: 20px;
+}
+
+ul {
+    padding: 0px;
+}
+
+#t12pt {
+    font-size: 16px;
+}
+
+#t24pt {
+    font-size: 32px;
+}
+
+#t36pt {
+    font-size: 48px;
+}
+
+#pageName {
+    display: inline-block;
+    font-family: "verdana", sans-serif;
+    font-size: 20px;
+}
+
+#dateBlock {
+    display: inline-block;
+    margin-left: 400px;
+    font-family: "verdana", sans-serif;
+    font-size: 20px;
+}
+
+
+div>ul{
+    font-family: "verdana", sans-serif;
+    font-size: 20px;
+    list-style: none;
+}
+
+.firstItem {
+    margin-left: 20px;
+}
+
+.pageList {
+    margin-bottom: 25px;
+}

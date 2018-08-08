@@ -50,5 +50,14 @@ app.use(function(err, req, res, next){
 });
 
 //setting the port to the env variable or 3000 as default
-var port = process.env.PORT || 3000;
-app.listen(port);
+ var port = process.env.PORT || 3000;
+ app.listen(port);
+
+
+/**************************************************************
+ *  alternate listening port
+ *   *************************************************************/
+//app.set('port', 4856);
+//app.listen(app.get('port'), function(){
+//    console.log('Express started http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
+//});
