@@ -5,7 +5,7 @@ const app = express();
 const mysql = require('./dbcon.js');
 
 // init the view engine
-app.engine('handlebars', exphbs({defaultLayout: 'main.handlebars.html'}));
+app.engine('hbs', exphbs({defaultLayout: 'main.hbs'}));
 app.set('view engine', 'hbs');
 
 // serving the static pages
@@ -35,7 +35,7 @@ app.get('/', function(req, res, next)  {
        homeVar.date = curDate;
        return homeVar;
    }
-   res.render('homePage', fillHomePage()); 
+   res.render('homePage', fillHomePage());
 });
 
 app.use(function(req,res){
