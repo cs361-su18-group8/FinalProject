@@ -38,6 +38,31 @@ app.get('/', function(req, res, next)  {
    res.render('homePage', fillHomePage());
 });
 
+app.get('/survey_instructions', function(req, res, next)  {
+   res.status(200);
+   // res.render('helloWorld.handlebars');
+
+// get username
+   var userName = 'Stan';
+   // get name of webpage
+   var pageName = 'Survey Instructions';
+   // get today's date
+   var dd = new Date();
+   var year = dd.getFullYear();
+   var month = dd.getMonth() + 1;
+   var day = dd.getDate();
+   var curDate = year + '/' + month + '/' + day;
+   // fill in template and render
+   function fillInstructionPage(){
+       var instructionsVar ={};
+       instructionsVar.userName = userName;
+       instructionsVar.pageName = pageName;
+       instructionsVar.date = curDate;
+       return instructionsVar;
+   }
+   res.render('instructionPage', fillInstructionPage());
+});
+
 app.use(function(req,res){
     res.status(404);
     res.render('404');
