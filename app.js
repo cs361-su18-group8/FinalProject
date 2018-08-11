@@ -12,6 +12,9 @@ app.set('view engine', 'hbs');
 app.use(express.static('./public'));
 app.set('mysql', mysql);
 
+app.use('/prescription', require('./prescription.js'));
+app.use('/otc', require('./otc.js'));
+
 //serving the main page
 app.get('/', function(req, res, next)  {
    res.status(200);
@@ -61,6 +64,16 @@ app.get('/survey_instructions', function(req, res, next)  {
        return instructionsVar;
    }
    res.render('instructionPage', fillInstructionPage());
+});
+
+app.get('/prescription_page', function(req, res, next)  {
+   res.status(200);
+   res.render('prescription');
+});
+
+app.get('/otc_page', function(req, res, next)  {
+   res.status(200);
+   res.render('otc');
 });
 
 app.use(function(req,res){
