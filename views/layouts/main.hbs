@@ -2,10 +2,47 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title> Homework_5 </title>
-        <link rel="stylesheet" href="homeTemplate.css " type="text/css">
+        <title> Group_8_Homework_5 </title>
+        <link rel="stylesheet" href="style.css" type="text/css">
     </head>
     <body>
-        {{{body}}}
+    	<div id="header">
+			<h1>My Complete Healthcare</h1>
+			<div id="nav">
+				<a href="">  PROFILE  </a> | <a href="">  RESOURCES  </a> | <a href="mailto:kraftme@oregonstate.edu">  CONTACT US  </a> | <a href="">  LOGOUT</a>
+			</div>
+			<div id="nav-bar1"></div>
+			<div id="nav-bar2"></div>
+		</div>
+		
+		<div id="username">
+			<p>Patient: {{userName}}</p>
+			<p id="dateBlock">Today: {{date}}</p>
+		</div>
+		<div id="font_change">
+			<p>
+				<a href="" id="t12pt">A</a>
+           		<a href="" id="t24pt">A</a>
+           		<a href="" id="t36pt">A</a>
+           	</p>
+		</div>
+		
+		<div id="content">
+        	{{{body}}}
+        </div>
+        
+        <br>
+        <div class="icons">
+			<a href="/"><img class="links" src="images/" alt="home_icon"></a>
+			<a href=""><img class="links" src="images/" alt="meds_icon"></a>
+			<a href=""><img class="links" src="images/" alt="docs_icon"></a>
+			<a href=""><img class="links" src="images/" alt="alerts_icon"></a>
+			<a href=""><img class="links" src="images/" alt="reports_icon" style="width:60px"></a>
+		</div>
+		
+		<br>
+		<div id="footer">
+			<p>Copyright &copy; My Complete Healthcare 2018</p>
+		</div>
     </body>
 </html>
