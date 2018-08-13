@@ -1,0 +1,131 @@
+/********************************************************************
+** Author: Group 8
+** Date: 08/17/2018
+** Description: This is the main style page for all html files for 
+				this website. This file handles the structure and
+				theme for the entire website.
+*********************************************************************/
+
+*{
+	font-family: "veranda", sans-serif;
+	color: #17415f;
+	background-color: white;
+	font-size: 12px;
+}
+
+#header{
+	background: url("logo.jpeg") no-repeat left top;
+	background-size: 125px 125px;
+	border-bottom: 1px white solid;
+}
+
+h1{
+	color: #17415f;
+	text-align: left;
+	padding: 25px 0px 0px 100px;
+	background-color: transparent;
+	text-shadow: 0 0 2px #17415f;
+	font-size: 38px;
+}
+
+#nav{
+	color: #17415f;
+	margin: 0.5%;
+	text-align: right;
+	font-size: 12px;
+	padding: 2px 30px 0px 0px;
+	background-color: transparent;
+}
+
+a{
+	text-decoration: none;
+	padding: 15px 15px;
+}
+
+#nav-bar1{
+	height: 0px;
+	width: 97.75%;
+	margin-left: 0.5%;
+	padding: 0px 15px 15px 0px;
+	border-bottom: 2px #FDBB4D solid;
+}
+
+#nav-bar2{
+	height: 0px;
+	width: 97.75%;
+	margin-left: 0.5%;
+	padding: 0px 15px 10px 0px;
+	border-bottom: 2px #56CAC1 solid;
+}
+
+#username{
+    margin-left: 20px;
+    width: 20%;
+    display: inline;
+    float: left;
+    margin-top: 3px;
+    clear: left;
+}
+
+#font_change{
+	text-align: right;
+	margin-top: 1px;
+	display: inline;
+	float: right;
+	width:20%;
+	background-color: transparent;
+	clear: right;
+}
+
+#t12pt{
+    font-size: 12px;
+    background-color: transparent;
+}
+
+#t24pt{
+    font-size: 24px;
+    background-color: transparent;
+}
+
+#t36pt{
+    font-size: 36px;
+    background-color: transparent;
+}
+
+#content{
+	text-align: center;
+	margin-top: 100px;
+	overflow: 0 auto;
+	margin-bottom: 75px;
+}
+
+body{
+	width: 90%;
+	margin: 0 auto;
+}
+
+.icons{
+	height: 50px;
+	background-color: transparent;
+	padding: 10px 10px 10px 10px;
+	text-align: center;
+	width: 97.25%;
+	margin: 0.5%;
+	position: relative;
+}
+
+.links{
+	height: 50px;
+	width: 50px;
+	float: center;
+	padding: 0px 5% 0px 5%;
+}
+
+#footer{
+	margin: 0.5%;
+	text-align: right;
+	font-size: 12px;
+	background-color: transparent;
+	margin-top: 0.5%;
+	padding: 10px 30px 5px 0px;
+}
