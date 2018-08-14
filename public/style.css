@@ -1,7 +1,7 @@
 /********************************************************************
 ** Author: Group 8
 ** Date: 08/17/2018
-** Description: This is the main style page for all html files for 
+** Description: This is the main style page for all html files for
 				this website. This file handles the structure and
 				theme for the entire website.
 *********************************************************************/
@@ -114,11 +114,21 @@ body{
 	position: relative;
 }
 
+.footer_icons{
+	height: 40px;
+}
+
 .links{
 	height: 50px;
 	width: 50px;
 	float: center;
 	padding: 0px 5% 0px 5%;
+}
+
+.pageList{
+	text-align: left;
+	margin: 4px;
+	list-style: none;
 }
 
 #footer{
