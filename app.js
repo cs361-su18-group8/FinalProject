@@ -8,7 +8,7 @@ const exphbs = require('express-handlebars');
 const session = require('express-session');
 
 // init the view engine
-app.engine('hbs', exphbs.create({defaultLayout:'main'}));
+app.engine('hbs', exphbs({defaultLayout: 'main.hbs'}));
 app.set('view engine', 'hbs');
 
 // serving the static pages
