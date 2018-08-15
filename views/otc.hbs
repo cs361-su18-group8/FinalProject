@@ -29,8 +29,8 @@
 			<fieldset>
 				<legend>Dosage</legend>                                                  <!-- Dosage input -->
 				<div>
-					<input type="number" id="dosage" value="0" width="10">
-					<select>
+					<input type="number" id="dosage" name="dosage" value="0" width="10">
+					<select id="dosage_unit" name="dosage_unit">
 						<option>mg</option>
 						<option>g</option>
 						<option>tsp</option>
@@ -45,7 +45,7 @@
 			<fieldset>
 				<legend>Instructions</legend>                                            <!-- Instructions input -->
 				<div>
-					<input type="text" id="instructions" value="">
+					<input type="text" id="instructions" name="instructions" value="">
 					<!-- <a href="#" onlclick="enable('instructions');">
  						<span class="glyphicon glyphicon-pencil"></span>
 					</a> edit icon -->
@@ -69,27 +69,45 @@
 			<fieldset>
 				<legend>Schedule</legend>                                                <!-- Schedule input -->
 				<div>
-					<label>Start Date<input type="date" id="startDate" value=""></label><br>
-					<label>Expir Date<input type="date" id="expirDate" value=""></label>
+					<label>Start Date<input type="date" id="start_date" name="start_date"></label><br>
+					<label>Expir Date<input type="date" id="expir_date" name="expir_date"></label>
 				</div>
 			
 				<div>
 					<label>Duration:</label><br>                                         <!-- Duration input -->
-					<label><input type="radio" id="limit" value="limit">limit</label>
-					<input type="number" id="duration" value="1">
-					<select>
+					<label><input type="radio" id="duration" name="duration" value="limit">limit</label>
+					<input type="number" id="duration_count" name="duration_count" value="1">
+					<select id="duration_unit" name="duration_unit">
 						<option value="days">day(s)</option>
 						<option value="weeks">week(s)</option>
 						<option value="months">month(s)</option>
 						<option value="years">year(s)</option>
 					</select>
 					<br>
-					<label><input type="radio" id="limit" value="limit">no limit</label>
+					<label><input type="radio" id="duration" name="duration" value="no limit">no limit</label>
 				</div>
 			</fieldset>
+			
+			<fieldset>
+				<div>
+   					<label>Frequency:</label><br>
+   					<label><input type="radio" name="frequency" id="frequency" value="every day">everyday</label><br>
+   					<label><input type="radio" name="frequency" id="frequency" value="every">every</label>
+   					<input type="number" name="count" id="count" value=""><label>days</label><br>
+   					<label><input type="radio" name="frequency" id="frequency" value="custom">custom</label>
+   					<label><input type="checkbox" name="sun" id="sun" value="sun">Sun</label>
+   					<label><input type="checkbox" name="mon" id="mon" value="mon">Mon</label>
+   					<label><input type="checkbox" name="tue" id="tue" value="tue">Tue</label>
+   					<label><input type="checkbox" name="wed" id="wed" value="wed">Wed</label>
+   					<label><input type="checkbox" name="thu" id="thu" value="thu">Thu</label>
+   					<label><input type="checkbox" name="fri" id="fri" value="fri">Fri</label>
+   					<label><input type="checkbox" name="sat" id="sat" value="sat">Sat</label>  				
+   				</div>
+			</fiedlset>
+			
 		
 			<fieldset>
-				<button type="submit" id="addOTC">Submit</button>		                <!-- Submit button -->
+				<button type="submit" id="addOTC" name="addOTC">Submit</button>		                <!-- Submit button -->
 			</fieldset>
 		</form>
 	</fieldset>
