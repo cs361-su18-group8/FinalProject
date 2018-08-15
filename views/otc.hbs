@@ -1,6 +1,6 @@
 <!------------------------------------------------------------------------------
--- Author: Riley Kraft
--- Date: 08/12/2018
+-- Author: Group 8
+-- Date: 08/17/2018
 -- Description: The over-the-counter page features the form for manually adding 
 --				medication objects into the system that are not prescriptions.
 -- Resources:
@@ -11,11 +11,10 @@
 ------------------------------------------------------------------------------->
 
 <title>otc</title>
-<!-- <link rel = "stylesheet" href= "style/home_style.css" type = "text/css"/> homepage style sheet-->
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> edit icons -->
 <link rel = "stylesheet" href= "/otc_style.css" type = "text/css"/>            <!-- over the counter style sheet -->
                                                                                 <!-- body of the page -->
-<div id="content">
+<div id="form">
 	<fieldset>
 		<legend>New Over the Counter</legend>
 		<form id="newOTC">											                     <!-- Over the Counter form -->					
@@ -25,9 +24,10 @@
 					<span class="glyphicon glyphicon-pencil"></span>
 				</a> edit icon -->
 			</fieldset>
+			<br>
 		
 			<fieldset>
-				<legend>Dosage</legend>                                                  <!-- Dosage input -->
+				<legend class=”collapsibleLegend”>Dosage</legend>                                                  <!-- Dosage input -->
 				<div>
 					<input type="number" id="dosage" name="dosage" value="0" width="10">
 					<select id="dosage_unit" name="dosage_unit">
@@ -41,22 +41,33 @@
 					</select>
 				</div>
 			</fieldset>
+			<br>
 		
 			<fieldset>
 				<legend>Instructions</legend>                                            <!-- Instructions input -->
-				<div>
-					<input type="text" id="instructions" name="instructions" value="">
+				<p>
+					<input type="text" id="instructions" name="instructions" value=NULL>
 					<!-- <a href="#" onlclick="enable('instructions');">
  						<span class="glyphicon glyphicon-pencil"></span>
 					</a> edit icon -->
-				</div>
+				</p>
 				
-				<div>
- 					<label><input type="checkbox" id="food" value="with food">with food</label><br>
- 					<label><input type="checkbox" id="water" value="with water">with water</label><br>
- 					<label><input type="checkbox" id="bed" value="before bed">before bed</label><br>
-				</div>
+				<p>
+					<label class="containerC">with food
+ 						<input type="checkbox" id="food" value="with food">
+  						<span class="checkmark"></span>
+					</label>
+ 					<label class="containerC">with water
+  						<input type="checkbox" id="water" value="with water">
+  						<span class="checkmark"></span>
+					</label>
+					<label class="containerC">before bed
+  						<input type="checkbox" id="bed" value="before bed">
+  						<span class="checkmark"></span>
+					</label>
+				</p>
 			</fieldset>
+			<br>
 		
 			<fieldset>
 				<legend>Reminders</legend>                                               <!-- Reminders input -->
@@ -65,17 +76,25 @@
  					<!-- dosage reminder settings -->
 				</div>
 			</fieldset>
+			<br>
 		
 			<fieldset>
 				<legend>Schedule</legend>                                                <!-- Schedule input -->
 				<div>
-					<label>Start Date<input type="date" id="start_date" name="start_date"></label><br>
-					<label>Expir Date<input type="date" id="expir_date" name="expir_date"></label>
+					<p><label>Start Date <input type="date" id="start_date" name="start_date"></label></p>
+					<p><label>Expir Date <input type="date" id="expir_date" name="expir_date"></label></p>
 				</div>
 			
 				<div>
 					<label>Duration:</label><br>                                         <!-- Duration input -->
-					<label><input type="radio" id="duration" name="duration" value="limit">limit</label>
+					<label class="containerR">no limit
+ 						<input type="radio" id="duration" name="duration" value="no limit" checked> 
+  						<span class="radiomark"></span>
+					</label>
+					<label class="containerR">limit
+ 						<input type="radio" id="duration" name="duration" value="limit"> 
+  						<span class="radiomark"></span>
+					</label>
 					<input type="number" id="duration_count" name="duration_count" value="1">
 					<select id="duration_unit" name="duration_unit">
 						<option value="days">day(s)</option>
@@ -83,27 +102,56 @@
 						<option value="months">month(s)</option>
 						<option value="years">year(s)</option>
 					</select>
-					<br>
-					<label><input type="radio" id="duration" name="duration" value="no limit">no limit</label>
+					</p>
 				</div>
 			</fieldset>
+			<br>
 			
 			<fieldset>
-				<div>
-   					<label>Frequency:</label><br>
-   					<label><input type="radio" name="frequency" id="frequency" value="every day">everyday</label><br>
-   					<label><input type="radio" name="frequency" id="frequency" value="every">every</label>
+   					<legend>Frequency</legend>
+   					<label class="containerR">everyday
+ 						<input type="radio" id="frequency" name="frequency" value="everyday" checked> 
+  						<span class="radiomark"></span>
+					</label>
+   					<label class="containerR">every
+ 						<input type="radio" id="frequency" name="frequency" value="every"> 
+  						<span class="radiomark"></span>
+					</label>
+   					<label class="containerR">custom
+ 						<input type="radio" id="frequency" name="frequency" value="custom"> 
+  						<span class="radiomark"></span>
+					</label>
    					<input type="number" name="count" id="count" value=""><label>days</label><br>
-   					<label><input type="radio" name="frequency" id="frequency" value="custom">custom</label>
-   					<label><input type="checkbox" name="sun" id="sun" value="sun">Sun</label>
-   					<label><input type="checkbox" name="mon" id="mon" value="mon">Mon</label>
-   					<label><input type="checkbox" name="tue" id="tue" value="tue">Tue</label>
-   					<label><input type="checkbox" name="wed" id="wed" value="wed">Wed</label>
-   					<label><input type="checkbox" name="thu" id="thu" value="thu">Thu</label>
-   					<label><input type="checkbox" name="fri" id="fri" value="fri">Fri</label>
-   					<label><input type="checkbox" name="sat" id="sat" value="sat">Sat</label>  				
-   				</div>
-			</fiedlset>
+   					<label class="containerC">SUN
+  						<input type="checkbox" id="sun" value="sun">
+  						<span class="checkmark"></span>
+					</label>
+					<label class="containerC">MON
+  						<input type="checkbox" id="mon" value="mon">
+  						<span class="checkmark"></span>
+					</label>
+					<label class="containerC">TUE
+  						<input type="checkbox" id="tue" value="tue">
+  						<span class="checkmark"></span>
+					</label>
+					<label class="containerC">WED
+  						<input type="checkbox" id="wed" value="wed">
+  						<span class="checkmark"></span>
+					</label>
+					<label class="containerC">THU
+  						<input type="checkbox" id="thu" value="thu">
+  						<span class="checkmark"></span>
+					</label>
+					<label class="containerC">FRI
+  						<input type="checkbox" id="fri" value="fri">
+  						<span class="checkmark"></span>
+					</label>
+					<label class="containerC">SAT
+  						<input type="checkbox" id="sat" value="sat">
+  						<span class="checkmark"></span>
+					</label> 			
+			</fieldset>
+			<br>
 			
 		
 			<fieldset>
