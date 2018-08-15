@@ -10,7 +10,7 @@ document.getElementById('addOTC').addEventListener('click',function(event){	// A
 	var newEntry = document.getElementById("newOTC");							// Get form to add prescription
 	var req = new XMLHttpRequest();													    // Generate request
 
-	var frequency = newEntry.elements.frequency.value;
+	/*var frequency = newEntry.elements.frequency.value;
 	if (frequency == "every") {
 		frequency = "every " + newEntry.elements.count.value + " days";
 	}
@@ -37,17 +37,18 @@ document.getElementById('addOTC').addEventListener('click',function(event){	// A
 		if (newEntry.elements.sat.value == true) {
 			frequency += newEntry.elements.sat.value + ", ";
 		}
-	}
+	}*/
 	
 	var qparams = "name="+newEntry.elements.name.value+				                    // Create qparams package
-					"&date_entered="+Date.now()+
 					"&start_date="+newEntry.elements.start_date.value+
 					"&expir_date="+newEntry.elements.expir_date.value+
-					"&quantity="+newEntry.elements.quantity.value+
-					"&quantity_unit="+newEntry.elements.quantity_unit.value+
+					"&quantity=NULL"+
+					"&quantity_unit=NULL"+
 					"&dosage="+newEntry.elements.dosage.value+
 					"&dosage_unit="+newEntry.elements.dosage_unit.value+
-					"&frequency="+frequency;
+					"&instructions="+newEntry.elements.instructions.value; /*+
+					"&duration="newEntry.elements.duration.value+
+					"&frequency="+frequency;*/
 
 	req.open("GET", "/otc/insertmed?"+qparams, true);							     // Open insert request
 	req.setRequestHeader('Content-Type','application/x-www-form-urlencoded');		     // Set request to URL Encoded type
