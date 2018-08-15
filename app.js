@@ -70,6 +70,32 @@ app.get('/survey_instructions', function(req, res, next)  {
    res.render('instructionPage', fillInstructionPage());
 });
 
+app.get('/survey', function(req, res, next)  {
+   res.status(200);
+
+// get username
+   var userName = 'Stan';
+   // get name of webpage
+   var pageName = 'Daily Survey';
+   var questionNumber = 1;
+   // get today's date
+   var dd = new Date();
+   var year = dd.getFullYear();
+   var month = dd.getMonth() + 1;
+   var day = dd.getDate();
+   var curDate = year + '/' + month + '/' + day;
+   // fill in template and render
+   function fillSurveyPage(){
+       var surveyVar ={};
+       surveyVar.userName = userName;
+       surveyVar.pageName = pageName;
+       surveyVar.date = curDate;
+       surveyVar.questionNumber = questionNumber;
+       return surveyVar;
+   }
+   res.render('surveyPage', fillSurveyPage());
+});
+
 app.get('/prescription_page', function(req, res, next)  {
    res.status(200);
    res.render('prescription');
@@ -91,10 +117,10 @@ app.use(function(err, req, res, next){
     res.render('500');
 });
 
-/*setting the port to the env variable or 3000 as default
- var port = process.env.PORT || 3000;
- app.listen(port);
-*/
+//setting the port to the env variable or 3000 as default
+ // var port = process.env.PORT || 3000;
+ // app.listen(port);
+
 
 /**************************************************************
  *  alternate listening port
