@@ -1,3 +1,16 @@
-.pageList {
-    margin-bottom: 25px;
+.home_icons{
+	height: 50px;
+	background-color: transparent;
+	padding: 30px 30px 30px 10px;
+	text-align: center;
+	width: 97.25%;
+	margin: 0.5%;
+	position: relative;
+}
+
+.icon{
+	height: 200px;
+	width: 200px;
+	float: center;
+	padding: 0px 0px 0px 7%;
 }
