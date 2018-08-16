@@ -15,8 +15,8 @@
 <link rel = "stylesheet" href= "/otc_style.css" type = "text/css"/>            <!-- over the counter style sheet -->
                                                                                 <!-- body of the page -->
 <div id="form">
-	<fieldset>
-		<legend>New Over the Counter</legend>
+	<fieldset class="mainFS">
+		<legend>New Over the Counter Drug</legend>
 		<form id="newOTC">											                     <!-- Over the Counter form -->					
 			<fieldset>
 				<input type="text" value="Name" name="name" id="name">                   <!-- Name input -->
@@ -27,9 +27,9 @@
 			<br>
 		
 			<fieldset>
-				<legend class=”collapsibleLegend”>Dosage</legend>                                                  <!-- Dosage input -->
-				<div>
-					<input type="number" id="dosage" name="dosage" value="0" width="10">
+				<legend>Dosage</legend>                                                  <!-- Dosage input -->
+				<div class="indent">
+					<input type="number" id="dosage" name="dosage" value="0" style="width:50px;">
 					<select id="dosage_unit" name="dosage_unit">
 						<option>mg</option>
 						<option>g</option>
@@ -45,33 +45,35 @@
 		
 			<fieldset>
 				<legend>Instructions</legend>                                            <!-- Instructions input -->
-				<p>
-					<input type="text" id="instructions" name="instructions" value=NULL>
-					<!-- <a href="#" onlclick="enable('instructions');">
- 						<span class="glyphicon glyphicon-pencil"></span>
-					</a> edit icon -->
-				</p>
-				
-				<p>
-					<label class="containerC">with food
- 						<input type="checkbox" id="food" value="with food">
-  						<span class="checkmark"></span>
-					</label>
- 					<label class="containerC">with water
-  						<input type="checkbox" id="water" value="with water">
-  						<span class="checkmark"></span>
-					</label>
-					<label class="containerC">before bed
-  						<input type="checkbox" id="bed" value="before bed">
-  						<span class="checkmark"></span>
-					</label>
-				</p>
+				<div class="indent">
+					<p>
+						<input type="text" id="instructions" name="instructions" value=NULL>
+						<!-- <a href="#" onlclick="enable('instructions');">
+	 						<span class="glyphicon glyphicon-pencil"></span>
+						</a> edit icon -->
+					</p>
+					
+					<p>
+						<label class="containerC">with food
+	 						<input type="checkbox" id="food" value="with food">
+	  						<span class="checkmark"></span>
+						</label>
+	 					<label class="containerC">with water
+	  						<input type="checkbox" id="water" value="with water">
+	  						<span class="checkmark"></span>
+						</label>
+						<label class="containerC">before bed
+	  						<input type="checkbox" id="bed" value="before bed">
+	  						<span class="checkmark"></span>
+						</label>
+					</p>
+				</div>
 			</fieldset>
 			<br>
 		
 			<fieldset>
 				<legend>Reminders</legend>                                               <!-- Reminders input -->
-				<div>
+				<div class="indent">
 					<label>take as needed</label>
  					<!-- dosage reminder settings -->
 				</div>
@@ -80,82 +82,89 @@
 		
 			<fieldset>
 				<legend>Schedule</legend>                                                <!-- Schedule input -->
-				<div>
-					<p><label>Start Date <input type="date" id="start_date" name="start_date"></label></p>
-					<p><label>Expir Date <input type="date" id="expir_date" name="expir_date"></label></p>
-				</div>
-			
-				<div>
-					<label>Duration:</label><br>                                         <!-- Duration input -->
-					<label class="containerR">no limit
- 						<input type="radio" id="duration" name="duration" value="no limit" checked> 
-  						<span class="radiomark"></span>
-					</label>
-					<label class="containerR" style="float:left;padding-right:35px;">limit
- 						<input type="radio" id="duration" name="duration" value="limit"> 
-  						<span class="radiomark"></span>
-					</label>
-					<input type="number" id="duration_count" name="duration_count" style="width: 50px;" value="1">
-					<select id="duration_unit" name="duration_unit">
-						<option value="days">day(s)</option>
-						<option value="weeks">week(s)</option>
-						<option value="months">month(s)</option>
-						<option value="years">year(s)</option>
-					</select>
-					</p>
+				<div class="indent">
+					<div>
+						<p><label>Start Date <input type="date" id="start_date" name="start_date" style="width:150px;"></label></p>
+						<p><label>Expir Date <input type="date" id="expir_date" name="expir_date" style="width:150px;"></label></p>
+					</div>
+				
+					<div>
+						<label>Duration:</label><br>                                         <!-- Duration input -->
+						<div class="indent">
+							<label class="containerR">no limit
+		 						<input type="radio" id="duration" name="duration" value="no limit" checked> 
+		  						<span class="radiomark"></span>
+							</label>
+							<label class="containerR" style="float:left;padding-right:35px;">limit
+		 						<input type="radio" id="duration" name="duration" value="limit"> 
+		  						<span class="radiomark"></span>
+							</label>
+							<input type="number" id="duration_count" name="duration_count" style="width: 50px;" value="1">
+							<select id="duration_unit" name="duration_unit">
+								<option value="days">day(s)</option>
+								<option value="weeks">week(s)</option>
+								<option value="months">month(s)</option>
+								<option value="years">year(s)</option>
+							</select>
+						</div>
+					</div>
 				</div>
 			</fieldset>
 			<br>
 			
 			<fieldset>
    					<legend>Frequency</legend>
-   					<p>
-   					<label class="containerR">everyday
- 						<input type="radio" id="frequency" name="frequency" value="everyday" checked> 
-  						<span class="radiomark"></span>
-  					</p>
-  					<p>
-					</label>
-   						<label class="containerR" style="float:left;padding-right:35px;">every
- 							<input type="radio" id="frequency" name="frequency" value="every"> 
-  							<span class="radiomark"></span>
+   					<div class="indent">
+	   					<p>
+	   					<label class="containerR">everyday
+	 						<input type="radio" id="frequency" name="frequency" value="everyday" checked> 
+	  						<span class="radiomark"></span>
+	  					</p>
+	  					<p>
 						</label>
-						<input type="number" name="count" id="count" value="0" style="width:50px;"> days
-					</p>
-   					<p>
-   					<label class="containerR">custom
- 						<input type="radio" id="frequency" name="frequency" value="custom"> 
-  						<span class="radiomark"></span>
-					</label>
-   					<label class="containerC">SUN
-  						<input type="checkbox" id="sun" value="sun">
-  						<span class="checkmark"></span>
-					</label>
-					<label class="containerC">MON
-  						<input type="checkbox" id="mon" value="mon">
-  						<span class="checkmark"></span>
-					</label>
-					<label class="containerC">TUE
-  						<input type="checkbox" id="tue" value="tue">
-  						<span class="checkmark"></span>
-					</label>
-					<label class="containerC">WED
-  						<input type="checkbox" id="wed" value="wed">
-  						<span class="checkmark"></span>
-					</label>
-					<label class="containerC">THU
-  						<input type="checkbox" id="thu" value="thu">
-  						<span class="checkmark"></span>
-					</label>
-					<label class="containerC">FRI
-  						<input type="checkbox" id="fri" value="fri">
-  						<span class="checkmark"></span>
-					</label>
-					<label class="containerC">SAT
-  						<input type="checkbox" id="sat" value="sat">
-  						<span class="checkmark"></span>
-					</label> 	
-					</p>		
+	   						<label class="containerR" style="float:left;padding-right:35px;">every
+	 							<input type="radio" id="frequency" name="frequency" value="every"> 
+	  							<span class="radiomark"></span>
+							</label>
+							<input type="number" name="count" id="count" value="0" style="width:50px;"> days
+						</p>
+	   					<p>
+	   					<label class="containerR">custom
+	 						<input type="radio" id="frequency" name="frequency" value="custom"> 
+	  						<span class="radiomark"></span>
+						</label>
+						<div class="indent">
+		   					<label class="containerC">SUN
+		  						<input type="checkbox" id="sun" value="sun">
+		  						<span class="checkmark"></span>
+							</label>
+							<label class="containerC">MON
+		  						<input type="checkbox" id="mon" value="mon">
+		  						<span class="checkmark"></span>
+							</label>
+							<label class="containerC">TUE
+		  						<input type="checkbox" id="tue" value="tue">
+		  						<span class="checkmark"></span>
+							</label>
+							<label class="containerC">WED
+		  						<input type="checkbox" id="wed" value="wed">
+		  						<span class="checkmark"></span>
+							</label>
+							<label class="containerC">THU
+		  						<input type="checkbox" id="thu" value="thu">
+		  						<span class="checkmark"></span>
+							</label>
+							<label class="containerC">FRI
+		  						<input type="checkbox" id="fri" value="fri">
+		  						<span class="checkmark"></span>
+							</label>
+							<label class="containerC">SAT
+		  						<input type="checkbox" id="sat" value="sat">
+		  						<span class="checkmark"></span>
+							</label> 
+						</div>	
+						</p>	
+					<div>	
 			</fieldset>
 			<br>
 			
