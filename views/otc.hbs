@@ -91,11 +91,11 @@
  						<input type="radio" id="duration" name="duration" value="no limit" checked> 
   						<span class="radiomark"></span>
 					</label>
-					<label class="containerR">limit
+					<label class="containerR" style="float:left;padding-right:35px;">limit
  						<input type="radio" id="duration" name="duration" value="limit"> 
   						<span class="radiomark"></span>
 					</label>
-					<input type="number" id="duration_count" name="duration_count" value="1">
+					<input type="number" id="duration_count" name="duration_count" style="width: 50px;" value="1">
 					<select id="duration_unit" name="duration_unit">
 						<option value="days">day(s)</option>
 						<option value="weeks">week(s)</option>
@@ -109,19 +109,24 @@
 			
 			<fieldset>
    					<legend>Frequency</legend>
+   					<p>
    					<label class="containerR">everyday
  						<input type="radio" id="frequency" name="frequency" value="everyday" checked> 
   						<span class="radiomark"></span>
+  					</p>
+  					<p>
 					</label>
-   					<label class="containerR">every
- 						<input type="radio" id="frequency" name="frequency" value="every"> 
-  						<span class="radiomark"></span>
-					</label>
+   						<label class="containerR" style="float:left;padding-right:35px;">every
+ 							<input type="radio" id="frequency" name="frequency" value="every"> 
+  							<span class="radiomark"></span>
+						</label>
+						<input type="number" name="count" id="count" value="0" style="width:50px;"> days
+					</p>
+   					<p>
    					<label class="containerR">custom
  						<input type="radio" id="frequency" name="frequency" value="custom"> 
   						<span class="radiomark"></span>
 					</label>
-   					<input type="number" name="count" id="count" value=""><label>days</label><br>
    					<label class="containerC">SUN
   						<input type="checkbox" id="sun" value="sun">
   						<span class="checkmark"></span>
@@ -149,7 +154,8 @@
 					<label class="containerC">SAT
   						<input type="checkbox" id="sat" value="sat">
   						<span class="checkmark"></span>
-					</label> 			
+					</label> 	
+					</p>		
 			</fieldset>
 			<br>
 			
