@@ -185,9 +185,8 @@ body{
   padding-left: 35px;
   padding-right: 25px;
   margin-bottom: 12px;
-  margin-left: 30px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 18px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -218,7 +217,7 @@ body{
 
 /* When the checkbox is checked, add a blue background */
 .containerC input:checked ~ .checkmark {
-  background-color: #17415f;
+  background-color: #56CAC1;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -253,7 +252,7 @@ body{
   padding-left: 35px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 18px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -284,7 +283,7 @@ body{
 
 /* When the radio button is checked, add a blue background */
 .containerR input:checked ~ .radiomark {
-  background-color: #17415f;
+  background-color: #56CAC1;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */

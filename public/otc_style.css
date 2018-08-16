@@ -11,19 +11,38 @@
 
 #form{
 	text-align: left;
+	size: 22px;
+}
+
+legend{
+	font-size: 22px;
+}
+
+label{
+	font-size: 18px;
+	margin-right: 10px;
 }
 
 fieldset{
 	height: auto;
 	margin: auto;
-    border: 2px solid #ccc;
-    border-radius: 2px;
-    width: 80%;
-    padding: 10px;
+	border: 0px;
+    width: 85%;
+    padding: 10px 10px 10px 10px;
+    font-size: 22px;	
+}
+
+.mainFS{
+	width: 80%;
+	border: 1px solid #17415f;
+	-moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px;
 }
 
 input{ 
-	border: 1px solid #000000; 
+	border: 0px; 
+	border-bottom: 1px solid #17415f;
 	padding: 5px 0px 0px 0px;
 	background-color: white; 
 	color: black;
@@ -33,6 +52,11 @@ input{
 textarea{
 	background-color: white;
 	color: black;
+	font-size: 22px;
+}
+
+.indent{
+	padding-left: 5%;
 }
 
 #name{
@@ -42,7 +66,7 @@ textarea{
 }
 
 #instructions{
-	width: 90%;
+	width: 78%;
 }
 
 #addOTC{
