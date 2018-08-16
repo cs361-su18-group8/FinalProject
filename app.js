@@ -19,6 +19,14 @@ app.set('mysql', mysql);
 
 app.use('/prescription', require('./prescription.js'));
 app.use('/otc', require('./otc.js'));
+// connect to the db
+
+mysql.pool.getConnection(function(err) {
+  if (err) throw err;
+  else {
+     console.log("Connected to the database");
+  }
+});
 
 //serving the main page
 app.get('/', function(req, res, next)  {
@@ -72,28 +80,39 @@ app.get('/survey_instructions', function(req, res, next)  {
 
 app.get('/survey', function(req, res, next)  {
    res.status(200);
+   // if(req.query.qID<=0) { req.query.qID = 1;}
+   // console.log(req.query.qID)
+   // var questionNumber = req.query.qID;
+   var questionNumber = Math.floor(Math.random() * 11) + 1;
+   console.log(questionNumber);
+   mysql.pool.query("SELECT `description` FROM Question WHERE ID=?", [questionNumber] , function (err, result, fields) {
+    if (err) throw err;
+    // get username
+    var userName = 'Stan';
+    // get name of webpage
+    var pageName = 'Daily Survey';
+     console.log(result[0].description);
+     var surveyQuestion = result[0].description;
+     //console.log(JSON.parse(result[0]));
+     // get today's date
+     var dd = new Date();
+     var year = dd.getFullYear();
+     var month = dd.getMonth() + 1;
+     var day = dd.getDate();
+     var curDate = year + '/' + month + '/' + day;
+     // fill in template and render
+     function fillSurveyPage(){
+         var surveyVar ={};
+         surveyVar.userName = userName;
+         surveyVar.pageName = pageName;
+         surveyVar.date = curDate;
+         surveyVar.questionNumber = questionNumber;
+         surveyVar.surveyQuestion = surveyQuestion;
+         return surveyVar;
+     }
+     res.render('surveyPage', fillSurveyPage());
+   });
 
-// get username
-   var userName = 'Stan';
-   // get name of webpage
-   var pageName = 'Daily Survey';
-   var questionNumber = 1;
-   // get today's date
-   var dd = new Date();
-   var year = dd.getFullYear();
-   var month = dd.getMonth() + 1;
-   var day = dd.getDate();
-   var curDate = year + '/' + month + '/' + day;
-   // fill in template and render
-   function fillSurveyPage(){
-       var surveyVar ={};
-       surveyVar.userName = userName;
-       surveyVar.pageName = pageName;
-       surveyVar.date = curDate;
-       surveyVar.questionNumber = questionNumber;
-       return surveyVar;
-   }
-   res.render('surveyPage', fillSurveyPage());
 });
 
 app.get('/prescription_page', function(req, res, next)  {
